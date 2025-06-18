@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.scss */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+  padding-top: 90px;
+}
+
+.fixed-top-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+/* Estilos para o Alto Contraste - CORES ORIGINAIS DE ACESSIBILIDADE */
+body.high-contrast-mode {
+  background-color: #000 !important; // Fundo preto puro
+  color: #fff !important;           // Texto branco puro
+  a {
+    color: #ffff00 !important; // Links amarelos brilhantes para contraste máximo
+  }
+  .navbar, .bg-light, .bg-dark, .bg-secondary, .topbar, .fixed-top-container {
+    background-color: #333 !important; // Tons de cinza escuro para elementos de fundo
+    color: #fff !important;
+    .nav-link {
+      color: #fff !important;
+    }
+  }
+  .bg-primary {
+    background-color: #000 !important; // Fundo preto puro
+    color: #fff !important;
+  }
+  .btn-primary {
+    background-color: #ffff00 !important; // Botões amarelos para destaque
+    border-color: #ffff00 !important;
+    color: #000 !important; // Texto preto nos botões amarelos
+  }
+  img:not(.no-contrast-filter) {
+    filter: grayscale(100%) invert(100%) !important; // Devolve o filtro original de P&B e inversão
+  }
+  button:focus, a:focus, input:focus, select:focus, textarea:focus {
+    outline: 3px solid #ffff00 !important;
+    outline-offset: 2px;
+  }
+}
+
+/* Estilos para o Tamanho da Fonte - ATÉ 10 NÍVEIS PARA MAIS E MENOS */
+
+// Tamanho padrão base (implícito pelo navegador/bootstrap)
+
+// Classes para aumentar a fonte (font-size-plus-1 a font-size-plus-10)
+@for $i from 1 through 10 {
+  body.font-size-plus-#{$i} {
+    // Começa com 1.1rem para +1, aumenta 0.1rem por nível
+    font-size: (1 + $i * 0.1) * 1rem !important;
+  }
+}
+
+// Classes para diminuir a fonte (font-size-minus-1 a font-size-minus-10)
+@for $i from 1 through 10 {
+  body.font-size-minus-#{$i} {
+    // Começa com 0.9rem para -1, diminui 0.1rem por nível (ou ajuste o decremento)
+    font-size: (1 - $i * 0.1) * 1rem !important; // Pode precisar ajustar a lógica se ficar muito pequeno
+  }
+}

@@ -2,19 +2,20 @@ import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
+import { AppComponent } from './app'; // <-- CORRIGIDO AQUI
 
 @NgModule({
-  declarations: [
-    App
+declarations: [
+//AppComponent // <-- CORRIGIDO AQUI
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
-  bootstrap: [App]
+imports: [
+BrowserModule,
+AppRoutingModule,
+AppComponent
+],
+providers: [
+provideBrowserGlobalErrorListeners()
+],
+bootstrap: [AppComponent] // <-- CORRIGIDO AQUI
 })
 export class AppModule { }
