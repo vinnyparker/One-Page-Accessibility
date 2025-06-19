@@ -1,95 +1,96 @@
-# Projeto One-Page Site com Acessibilidade
+# One-Page Site with Accessibility
 
-Este é um projeto de site de página única (One-Page Site) desenvolvido com Angular, Bootstrap e SCSS, com foco robusto na implementação de funcionalidades de acessibilidade.
+This is a single-page website project developed with Angular, Bootstrap, and SCSS, with a strong focus on implementing accessibility features.
 
-## Visão Geral do Projeto
+## Project Overview
 
-O objetivo principal deste projeto é demonstrar a construção de um site moderno e responsivo que incorpora recursos essenciais de acessibilidade para garantir que o conteúdo seja acessível ao maior número possível de usuários, incluindo aqueles com diferentes necessidades.
+The main goal of this project is to demonstrate the construction of a modern and responsive website that incorporates essential accessibility features to ensure content is accessible to the widest possible range of users, including those with different needs.
 
-### Funcionalidades de Acessibilidade Implementadas
+### Implemented Accessibility Features
 
-* **Alto Contraste:** Permite que o usuário alterne para um modo de alto contraste (preto/branco/amarelo vibrante) para melhorar a legibilidade para pessoas com deficiência visual. As cores foram escolhidas para maximizar o contraste conforme as diretrizes de acessibilidade.
-* **Ajuste de Tamanho de Fonte:** Oferece botões para aumentar e diminuir o tamanho da fonte em múltiplos níveis, permitindo que o usuário personalize a legibilidade do texto. Isso é aplicado dinamicamente a todos os elementos de texto do site.
-* **Navegação Fixa (Sticky Header):** O cabeçalho (que inclui a barra de acessibilidade e o menu de navegação) permanece fixo no topo da tela durante a rolagem, facilitando o acesso constante às opções e navegação.
-* **Foco Visual Aprimorado:** Elementos interativos (botões, links, inputs) recebem um contorno visual claro ao serem focados (via teclado ou tabulação), melhorando a navegação para usuários que não utilizam o mouse.
+* **High Contrast Mode:** Allows the user to switch to a high-contrast mode (pure black/white/vibrant yellow) to improve readability for users with visual impairments. The colors were chosen to maximize contrast according to accessibility guidelines.
+* **Font Size Adjustment:** Provides buttons to increase and decrease font size at multiple levels, allowing users to customize text readability. This is dynamically applied to all text elements on the site.
+* **Sticky Header:** The header (which includes the accessibility toolbar and navigation menu) remains fixed at the top of the screen while scrolling, providing constant access to options and navigation.
+* **Enhanced Visual Focus:** Interactive elements (buttons, links, inputs) receive a clear visual outline when focused (via keyboard or tabbing), improving navigation for users who do not use a mouse.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-* **Angular CLI:** Ferramenta para iniciar, desenvolver, compilar e manter aplicações Angular.
-* **Angular:** Framework para construção de aplicações web de página única.
-* **TypeScript:** Superset do JavaScript que adiciona tipagem estática.
-* **SCSS (Sass):** Pré-processador CSS que adiciona funcionalidades como variáveis, aninhamento e laços para um CSS mais organizado e dinâmico.
-* **Bootstrap 5:** Framework de CSS para desenvolvimento rápido e responsivo da interface do usuário.
+* **Angular CLI:** A command-line interface tool for initializing, developing, scaffolding, and maintaining Angular applications.
+* **Angular:** A framework for building single-page web applications.
+* **TypeScript:** A superset of JavaScript that adds static typing.
+* **SCSS (Sass):** A CSS preprocessor that adds features like variables, nesting, and loops for more organized and dynamic CSS.
+* **Bootstrap 5:** A popular CSS framework for rapid and responsive user interface development.
 
-## Como Iniciar o Projeto
+## How to Get Started
 
-Para rodar este projeto em sua máquina local, siga os passos abaixo:
+To run this project on your local machine, follow the steps below:
 
-### Pré-requisitos
+### Prerequisites
 
-Certifique-se de ter o Node.js e o Angular CLI instalados globalmente em sua máquina.
+Ensure you have Node.js and Angular CLI globally installed on your machine.
 
-* **Node.js:** Baixe e instale a versão LTS mais recente em [nodejs.org](https://nodejs.org/).
-* **Angular CLI:** Após instalar o Node.js, instale o Angular CLI via npm:
+* **Node.js:** Download and install the latest LTS version from [nodejs.org](https://nodejs.org/).
+* **Angular CLI:** After installing Node.js, install Angular CLI via npm:
     ```bash
     npm install -g @angular/cli
     ```
 
-### Instalação
+### Installation
 
-1.  **Clone o repositório** (ou descompacte o projeto) para o seu diretório local:
+1.  **Clone the repository** (or unzip the project) to your local directory:
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
-    # ou navegue até o diretório do projeto se já o tiver
+    git clone https://github.com/vinnyparker/One-Page-Accessibility
+    # or navigate to the project directory if you already have it
     cd onepage-site
     ```
-2.  **Instale as dependências** do projeto:
+2.  **Install project dependencies**:
     ```bash
     npm install
     ```
-    Isso instalará todas as bibliotecas necessárias, incluindo Angular e Bootstrap.
+    This will install all necessary libraries, including Angular and Bootstrap.
 
-### Executando o Servidor de Desenvolvimento
+### Running the Development Server
 
-1.  Após a instalação das dependências, você pode iniciar o servidor de desenvolvimento do Angular:
+1.  After installing dependencies, you can start the Angular development server:
     ```bash
     ng serve
     ```
-2.  Abra seu navegador e navegue para `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você fizer alterações em qualquer arquivo-fonte.
+2.  Open your browser and navigate to `http://localhost:4200/`. The application will automatically reload if you make any changes to the source files.
 
-## Estrutura de Pastas e Arquivos Chave
+## Folder Structure and Key Files
 
-* `src/app/`: Contém os componentes principais da aplicação.
-  * `app.component.ts`: Lógica principal do componente raiz, incluindo a manipulação das classes de acessibilidade (`Renderer2` e `document.body.classList`).
-  * `app.html`: Estrutura HTML do site, incluindo o topbar de acessibilidade, o cabeçalho fixo e as seções da página.
-  * `app.scss`: Estilos específicos do componente `AppComponent` (embora a maioria dos estilos de acessibilidade estejam em `styles.scss`).
-* `src/styles.scss`: Arquivo global de estilos SCSS. **Contém as definições de cores para o modo de alto contraste e os múltiplos níveis de tamanho de fonte**, utilizando laços `@for` para gerar as classes dinamicamente.
-* `src/index.html`: O arquivo HTML principal que carrega a aplicação Angular.
-* `angular.json`: Arquivo de configuração do Angular CLI, onde o `styles.scss` e os arquivos do Bootstrap são configurados para serem carregados globalmente.
+* `src/app/`: Contains the main components of the application.
+  * `app.component.ts`: Main logic for the root component, including handling accessibility classes (using `Renderer2` and `document.body.classList`).
+  * `app.html`: HTML structure of the site, including the accessibility topbar, sticky header, and page sections.
+  * `app.scss`: Component-specific styles for `AppComponent` (though most accessibility styles are in `styles.scss`).
+* `src/styles.scss`: Global SCSS stylesheet. **Contains color definitions for high-contrast mode and multiple font size levels**, using `@for` loops to generate classes dynamically.
+* `src/index.html`: The main HTML file that loads the Angular application.
+* `angular.json`: Angular CLI configuration file, where `styles.scss` and Bootstrap files are configured for global loading.
 
-## Detalhes da Implementação de Acessibilidade
+## Accessibility Implementation Details
 
-### Controle de Classes CSS
+### CSS Class Control
 
-A manipulação das classes de acessibilidade (`high-contrast-mode`, `font-size-plus-X`, `font-size-minus-X`) é feita diretamente na tag `<body>` do documento. Isso é alcançado utilizando o `Renderer2` do Angular e o `document.body.classList` no `app.component.ts`.
+The manipulation of accessibility classes (`high-contrast-mode`, `font-size-plus-X`, `font-size-minus-X`) is done directly on the document's `<body>` tag. This is achieved by using Angular's `Renderer2` and `document.body.classList` within `app.component.ts`.
 
-### Armazenamento Persistente
+### Persistent Storage
 
-As configurações de alto contraste e o nível de zoom da fonte são armazenadas no `localStorage` do navegador. Isso significa que as preferências do usuário são mantidas mesmo após o fechamento e reabertura do navegador.
+High-contrast settings and font zoom levels are stored in the browser's `localStorage`. This means user preferences are maintained even after closing and reopening the browser.
 
-### Estilos SCSS Dinâmicos
+### Dynamic SCSS Styles
 
-As classes de tamanho de fonte (`font-size-plus-1` até `font-size-plus-10` e `font-size-minus-1` até `font-size-minus-10`) são geradas programaticamente no `styles.scss` usando laços `@for` do SCSS. Isso permite uma escalabilidade fácil para adicionar mais ou menos níveis de ajuste de fonte sem repetir muito código CSS. O seletor universal `*` é usado dentro dessas classes para garantir que todos os elementos de texto sejam afetados, sobrescrevendo estilos padrão do navegador ou do Bootstrap.
+Font size classes (`font-size-plus-1` to `font-size-plus-10` and `font-size-minus-1` to `font-size-minus-10`) are programmatically generated in `styles.scss` using SCSS `@for` loops. This allows for easy scalability to add more or fewer font adjustment levels without repeating much CSS code. The universal selector `*` is used within these classes to ensure all text elements are affected, overriding default browser or Bootstrap styles.
 
-### Z-Index para Conteúdo Fixo
+### Z-Index for Fixed Content
 
-Para garantir que o cabeçalho fixo (contendo o topbar e a navbar) permaneça visível sobre o restante do conteúdo ao rolar, foi utilizado `position: fixed` e um `z-index` elevado (`1030`) no elemento `.fixed-top-container`. Um `padding-top` correspondente é aplicado ao `body` para evitar que o conteúdo da página fique escondido atrás do cabeçalho fixo.
+To ensure the fixed header (containing the topbar and navbar) remains visible over the rest of the content when scrolling, `position: fixed` and a high `z-index` (`1030`) are used on the `.fixed-top-container` element. A corresponding `padding-top` is applied to the `body` to prevent page content from being hidden behind the fixed header.
 
-## Contribuição
+## Contribution
 
-Contribuições são bem-vindas! Se você tiver sugestões para melhorar a acessibilidade, o código ou o design, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
+Contributions are welcome! If you have suggestions to improve accessibility, code, or design, feel free to open an issue or submit a pull request.
 
-## Licença
+**[Versão em Português do README](README-pt-br.md)**
 
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
----
+## License
+
+This project is licensed under the [MIT License](LICENSE).
